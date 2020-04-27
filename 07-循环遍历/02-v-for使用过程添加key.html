@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <ul>
+    <!-- key绑定的元素和显示的一一对应，绑定对象要求唯一性-->
+    <!-- 提高在中间插入元素的效率-->
+    <!-- key的作用主要是为了高效的更新虚拟的dom,要求key具有唯一性，否则无效-->
+   <li v-for="item in letters" :key="item">{{item}}</li>
+  </ul>
+</div>
+
+<!--app.letters.push('F') 在最后插入值-->
+<!--app.letters.splice(2,3) 从第二个位置开始删掉三个元素 第三 第四 第五-->
+<!--app.letters.splice(2,0,'F') 不删除 直接在第二个元素之后加入一个 F-->
+
+<script src="../js/vue.js"></script>
+<script>
+    const app=new Vue({
+        el:'#app',
+        data:{
+            message:'你好',
+            letters:['A','B','C','D']
+        }
+    })
+</script>
+
+</body>
+</html>

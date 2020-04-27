@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+<!--     v-if  当isShow是false时，包含v-if指令的函数的元素根本不会存在dom中-->
+<!--    当isShow是true时，会重新创建元素显示-->
+    <h2 v-if="isShow" id="aa">{{message}}</h2>
+
+<!--    v-show:当条件为false时，v-show只是给我们的元素添加一个行内的样式 ： display:none,元素本身还是存在dom中-->
+    <h2 v-show="isShow" id="bb">{{message}}</h2>
+
+<!--    如何选择：-->
+<!--    显示和隐藏切换频率非常高的时候使用 v-show-->
+<!--    只有一次切换时，使用v-if-->
+
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+const app=new Vue({
+    el:'#app',
+    data:{
+        message:'你好',
+        isShow:true
+    }
+})
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+<!--   <label for="female">-->
+<!--     <input type ="radio" id="male" name="sex" value="男">男-->
+<!--   </label>-->
+<!--   <br>-->
+<!--  <label for="female">-->
+<!--    <input type ="radio" id="female" name="sex"  value="女">女-->
+<!--  </label>-->
+<!--设置 radio name 一样就会互斥 两个只能选一个-->
+
+  <label for="female">
+    <input type ="radio" id="male"   value="男" v-model="sex">男
+  </label>
+  <br>
+  <label for="female">
+    <input type ="radio" id="female"  value="女" v-model="sex">女
+  </label>
+  <!--设置 v-model 绑定同一个变量 也会互斥 两个只能选一个-->
+
+  <h2>你选择的性别是： {{sex}}</h2>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    const app=new Vue({
+        el:'#app',
+        data:{
+            message:'你好',
+            sex:'男'
+        }
+    })
+</script>
+
+</body>
+</html>
